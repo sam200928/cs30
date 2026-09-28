@@ -5,23 +5,21 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
-import javax.swing.JTextField;
-import javax.swing.JMenuBar;
-import javax.swing.Box;
-import javax.swing.JComboBox;
-import javax.swing.DefaultComboBoxModel;
 import javax.swing.JLabel;
+import javax.swing.JButton;
 
-public class MetricConversion {
+public class roll {
 
 	private JFrame frame;
 
-
+	/**
+	 * Launch the application.
+	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					MetricConversion window = new MetricConversion();
+					roll window = new roll();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -30,12 +28,16 @@ public class MetricConversion {
 		});
 	}
 
-	
-	public MetricConversion() {
+	/**
+	 * Create the application.
+	 */
+	public roll() {
 		initialize();
 	}
 
-	
+	/**
+	 * Initialize the contents of the frame.
+	 */
 	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 450, 300);
@@ -45,13 +47,12 @@ public class MetricConversion {
 		frame.getContentPane().add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(64, 43, 292, 76);
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"1 inch is 2.54 cm", "1 foot is 0.3048 m", "1 gallon is 4.5461 L", "1 pound is 0.4536 kg"}));
-		panel.add(comboBox);
-		
-		JLabel lblNewLabel = new JLabel("Select a Conversation Type");
-		lblNewLabel.setBounds(64, 11, 292, 38);
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setBounds(77, 11, 164, 36);
 		panel.add(lblNewLabel);
+		
+		JButton btnNewButton = new JButton("New button");
+		btnNewButton.setBounds(74, 83, 89, 23);
+		panel.add(btnNewButton);
 	}
 }
