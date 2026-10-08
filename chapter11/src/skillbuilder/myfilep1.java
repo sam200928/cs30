@@ -8,12 +8,12 @@ public class myfilep1 {
  // do not use scanner to access files
 		
 		File textFile;
-String fileName;
+String response;
 		Scanner input = new Scanner(System.in);
 	// obtain file name
 		System.out.println("enter file name: ");
-	fileName = input.next();
-	textFile = new File(fileName); 
+	response = input.next();
+	textFile = new File(response); 
 	if(textFile.exists())
 	
 	{
@@ -25,5 +25,21 @@ String fileName;
 			System.out.println("file does not exist.");
 
 	}
+	
+	// del if user wants
+	System.out.println("would you like to (k)eep or (d)elete file");
+	response = input.next();
+	if(response.equalsIgnoreCase("d"))
+	{
+		if(textFile.delete())
+		{
+			System.out.println("file is gone");
+		}
+	
 	}
+	else
+	{
+		System.out.println("file is kept");
+	}
+}
 }
